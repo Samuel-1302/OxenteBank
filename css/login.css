@@ -1,0 +1,240 @@
+:root {
+    /* Cores Principais */
+    --oxente-green: #7BA05B;
+    --oxente-beige: #F5F1E8;
+    --oxente-blue: #2C5F7C;
+    --oxente-orange: #D2691E;
+    
+    /* Cores de Suporte */
+    --oxente-green-hover: #6a8e4f;
+    --oxente-blue-light: #4A7A99;
+    --oxente-red-badge: #E74C3C;
+    
+    /* Tipografia */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    
+    /* Espaçamentos */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Bordas e Sombras */
+    --border-radius: 8px;
+    --border-radius-lg: 12px;
+    --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --box-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===================================
+   RESET E ESTILOS GLOBAIS
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--oxente-beige);
+    color: #333333;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--oxente-blue);
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--oxente-green);
+}
+
+/* ===================================
+   TELA: LOGIN (index.html)
+   =================================== */
+
+.login-container {
+    min-height: 100vh;
+    background-color: var(--oxente-beige);
+}
+
+.login-card {
+    max-width: 520px;
+    width: 100%;
+    padding: 3rem 2.5rem;
+}
+
+/* Logo - DESTAQUE MÁXIMO */
+.login-logo-container {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.login-logo {
+    width: 420px; /* MUITO MAIOR para ter destaque */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+}
+
+/* Título Login */
+.login-titulo {
+    font-family: var(--font-heading);
+    font-size: 3rem; /* 48px - BEM GRANDE */
+    font-weight: 700;
+    color: var(--oxente-blue);
+    margin-bottom: 2.5rem;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+/* Campos de Input */
+.custom-input-group {
+    margin-bottom: 1.75rem;
+}
+
+.custom-input-group .input-group-text {
+    background-color: #FFFFFF;
+    border: 2px solid #E0E0E0;
+    border-right: none;
+    padding: 0 1.25rem;
+    border-radius: 8px 0 0 8px;
+}
+
+.custom-input-group .input-group-text i {
+    font-size: 1.5rem; /* Ícone maior */
+    color: var(--oxente-green);
+}
+
+.custom-input-group .custom-input {
+    font-size: 1.25rem; /* 20px - LEGÍVEL */
+    padding: 1rem 1.25rem;
+    height: 62px; /* Altura maior */
+    border: 2px solid #E0E0E0;
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+    transition: all 0.3s ease;
+}
+
+.custom-input-group .custom-input:focus {
+    border-color: var(--oxente-green);
+    box-shadow: 0 0 0 0.25rem rgba(123, 160, 91, 0.15);
+    outline: none;
+}
+
+.custom-input-group .custom-input::placeholder {
+    color: #999999;
+    font-size: 1.125rem; /* 18px */
+}
+
+/* Botão Entrar */
+.btn-entrar {
+    background-color: var(--oxente-green);
+    border: none;
+    font-size: 1.375rem; /* 22px - GRANDE */
+    font-weight: 600;
+    padding: 1rem 2rem;
+    height: 62px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: #FFFFFF;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.btn-entrar:hover {
+    background-color: var(--oxente-green-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(123, 160, 91, 0.4);
+}
+
+@media (max-width: 767px) {
+    .cadastro-container {
+        padding: 1.5rem 0.5rem; /* Padding superior reduzido */
+    }
+    
+    .cadastro-logo {
+        width: 240px; /* Logo ainda menor em mobile */
+    }
+    
+    .cadastro-logo-container {
+        margin-bottom: 1.25rem;
+    }
+    
+    /* ... resto das regras ... */
+}
+
+/* Mobile Pequeno (até 575px) */
+@media (max-width: 575px) {
+    .cadastro-container {
+        padding: 1.25rem 0.25rem; /* Padding mínimo */
+    }
+    
+    .cadastro-logo {
+        width: 200px; /* Logo compacto em telas pequenas */
+    }
+    
+    .cadastro-logo-container {
+        margin-bottom: 1rem;
+    }
+    
+    /* ... resto das regras ... */
+}
+
+/* Link Esqueceu a Senha */
+.link-senha {
+    color: var(--oxente-blue);
+    font-size: 1.125rem; /* 18px */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.link-senha:hover {
+    color: var(--oxente-green);
+    text-decoration: underline;
+}
+
+/* Ilustração */
+.login-ilustracao {
+    background-color: var(--oxente-beige);
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.illustration-img {
+    max-width: 90%;
+    height: auto;
+    opacity: 0.95;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
+}
+
+.link-cadastro {
+    color: var(--oxente-green);
+    font-size: 1.125rem; /* 18px */
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.link-cadastro:hover {
+    color: var(--oxente-green-hover);
+    text-decoration: underline;
+}
+
+.link-cadastro i {
+    font-size: 1.25rem;
+}

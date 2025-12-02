@@ -1,0 +1,20 @@
+/**
+ * OxenteBank - Fintech para Cooperativas do Agronegócio
+ * Arquivo CSS Principal
+ * Importa todos os estilos do sistema
+ */
+
+/* Páginas Específicas */
+@import "./login.css";
+@import "./recuperar-senha.css";
+@import "./cadastro-cooperativa.css";
+@import "./dashboard.css";
+@import "./saldo-extrato.css";
+@import "./transferencias.css";
+@import "./solicitar-credito.css";
+@import "./relatorios.css";
+@import "./garantias.css";
+@import "./formulario-credito.css";
+
+/* Responsividade e Acessibilidade */
+

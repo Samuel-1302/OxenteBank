@@ -1,0 +1,178 @@
+.recuperar-senha-card {
+    max-width: 520px;
+    width: 100%;
+    padding: 3rem 2.5rem;
+}
+
+/* Logo - MESMO DESTAQUE DO LOGIN */
+.recuperar-logo-container {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.recuperar-logo {
+    width: 420px; /* IGUALMENTE GRANDE */
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+}
+
+/* Título */
+.recuperar-titulo {
+    font-family: var(--font-heading);
+    font-size: 2.75rem; /* 44px - GRANDE */
+    font-weight: 700;
+    color: var(--oxente-blue);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
+/* Descrição */
+.recuperar-descricao {
+    font-size: 1.25rem; /* 20px - BEM LEGÍVEL */
+    color: #666666;
+    line-height: 1.7;
+    text-align: center;
+    max-width: 450px;
+    margin: 0 auto 2.5rem;
+}
+
+/* Botão Enviar */
+.btn-enviar {
+    background-color: var(--oxente-green);
+    border: none;
+    font-size: 1.375rem; /* 22px */
+    font-weight: 600;
+    padding: 1rem 2rem;
+    height: 62px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: #FFFFFF;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.btn-enviar:hover {
+    background-color: var(--oxente-green-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(123, 160, 91, 0.4);
+}
+
+/* Link Voltar */
+.link-voltar {
+    color: var(--oxente-blue);
+    font-size: 1.125rem; /* 18px */
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.link-voltar:hover {
+    color: var(--oxente-green);
+    text-decoration: underline;
+}
+
+.link-voltar i {
+    font-size: 1rem;
+}
+
+/* Ilustração Recuperar Senha */
+.recuperar-ilustracao {
+    background-color: var(--oxente-beige);
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===================================
+   RESPONSIVO - MOBILE & TABLET
+   =================================== */
+
+/* Tablet (768px - 991px) */
+@media (max-width: 991px) {
+    .login-logo,
+    .recuperar-logo {
+        width: 340px;
+    }
+    
+    .login-titulo {
+        font-size: 2.5rem; /* 40px */
+    }
+    
+    .recuperar-titulo {
+        font-size: 2.25rem; /* 36px */
+    }
+}
+
+/* Mobile (até 767px) */
+@media (max-width: 767px) {
+    .login-card,
+    .recuperar-senha-card {
+        padding: 2.5rem 2rem;
+    }
+    
+    .login-logo,
+    .recuperar-logo {
+        width: 280px; /* Ainda grande em mobile */
+    }
+    
+    .login-titulo {
+        font-size: 2.25rem; /* 36px */
+    }
+    
+    .recuperar-titulo {
+        font-size: 2rem; /* 32px */
+    }
+    
+    .recuperar-descricao {
+        font-size: 1.125rem; /* 18px */
+    }
+    
+    .custom-input-group .custom-input {
+        font-size: 1.125rem; /* 18px */
+        height: 56px;
+    }
+    
+    .btn-entrar,
+    .btn-enviar {
+        font-size: 1.25rem; /* 20px */
+        height: 56px;
+    }
+    
+    .link-senha,
+    .link-voltar {
+        font-size: 1rem; /* 16px */
+    }
+}
+
+/* Mobile Pequeno (até 480px) */
+@media (max-width: 480px) {
+    .login-card,
+    .recuperar-senha-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .login-logo,
+    .recuperar-logo {
+        width: 240px;
+    }
+    
+    .login-titulo {
+        font-size: 2rem; /* 32px */
+    }
+    
+    .recuperar-titulo {
+        font-size: 1.75rem; /* 28px */
+    }
+    
+    .recuperar-descricao {
+        font-size: 1rem; /* 16px */
+    }
+}

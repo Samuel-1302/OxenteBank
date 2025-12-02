@@ -1,0 +1,128 @@
+.titulo-pagina {
+    font-family: var(--font-heading);
+    font-size: 2.25rem; /* 36px */
+    font-weight: 700;
+    color: var(--oxente-blue);
+    margin: 0;
+}
+
+/* Card de Saldo */
+.saldo-card {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F5F1E8 100%);
+    border: none;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.saldo-card .card-body {
+    padding: 2.5rem;
+}
+
+.saldo-card .card-subtitle {
+    font-size: 1.125rem; /* 18px */
+    font-weight: 500;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Card de Extrato */
+.extrato-card {
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.extrato-card .card-body {
+    padding: 0;
+}
+
+/* Tabela */
+.extrato-card table {
+    margin-bottom: 0;
+}
+
+.extrato-card thead th {
+    background-color: var(--oxente-beige);
+    color: var(--oxente-blue);
+    font-weight: 600;
+    font-size: 1rem; /* 16px */
+    padding: 1.25rem 1.5rem;
+    border-bottom: 2px solid #E0E0E0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.extrato-card tbody td {
+    padding: 1.25rem 1.5rem;
+    font-size: 1.0625rem; /* 17px */
+    vertical-align: middle;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+.extrato-card tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.extrato-card tbody tr:hover {
+    background-color: rgba(123, 160, 91, 0.05);
+}
+
+/* Ícones na tabela */
+.extrato-card tbody td i {
+    font-size: 1.375rem; /* 22px */
+}
+
+/* Valores */
+.extrato-card .fw-semibold {
+    font-size: 1.125rem; /* 18px */
+}
+
+/* Dropdown customizado */
+.btn-outline-dark {
+    border-width: 2px;
+    font-weight: 500;
+}
+
+/* ===================================
+   RESPONSIVO - SALDO E EXTRATO
+   =================================== */
+
+@media (max-width: 991px) {
+    .titulo-pagina {
+        font-size: 1.875rem; /* 30px */
+    }
+    
+    .saldo-card .card-body {
+        padding: 2rem;
+    }
+    
+    .extrato-card thead th,
+    .extrato-card tbody td {
+        padding: 1rem;
+        font-size: 0.9375rem; /* 15px */
+    }
+}
+
+@media (max-width: 767px) {
+    .titulo-pagina {
+        font-size: 1.5rem; /* 24px */
+    }
+    
+    .saldo-card .card-body {
+        padding: 1.5rem;
+    }
+    
+    /* Esconder coluna de data em mobile */
+    .extrato-card thead th:first-child,
+    .extrato-card tbody td:first-child {
+        display: none;
+    }
+    
+    .extrato-card thead th,
+    .extrato-card tbody td {
+        padding: 0.875rem;
+        font-size: 0.875rem; /* 14px */
+    }
+}

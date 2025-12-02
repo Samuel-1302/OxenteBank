@@ -1,0 +1,207 @@
+
+.transferencia-card {
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.transferencia-card .card-body {
+    padding: 2.5rem;
+}
+
+/* Seções do Formulário */
+.form-section {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #F0F0F0;
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600;
+    color: var(--oxente-blue);
+    display: flex;
+    align-items: center;
+}
+
+.section-title i {
+    font-size: 1.375rem; /* 22px */
+    color: var(--oxente-green);
+}
+
+/* Labels */
+.form-label {
+    font-size: 1rem; /* 16px */
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 0.5rem;
+}
+
+/* Inputs */
+.custom-input {
+    font-size: 1rem; /* 16px */
+    padding: 0.875rem 1rem;
+    height: 52px;
+    border: 2px solid #E0E0E0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+    border-color: var(--oxente-green);
+    box-shadow: 0 0 0 0.2rem rgba(123, 160, 91, 0.15);
+    outline: none;
+}
+
+.custom-input::placeholder {
+    color: #999999;
+}
+
+/* Input Group (R$) */
+.input-group .input-group-text {
+    background-color: var(--oxente-beige);
+    border: 2px solid #E0E0E0;
+    border-right: none;
+    font-weight: 600;
+    color: var(--oxente-blue);
+    font-size: 1.125rem; /* 18px */
+}
+
+.input-group .custom-input {
+    border-left: none;
+}
+
+/* Botão Confirmar */
+.btn-confirmar {
+    background-color: var(--oxente-green);
+    border: none;
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600;
+    padding: 1rem 2rem;
+    height: 56px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: #FFFFFF;
+}
+
+.btn-confirmar:hover {
+    background-color: var(--oxente-green-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(123, 160, 91, 0.4);
+}
+
+/* ===================================
+   CARD DE RESUMO
+   =================================== */
+
+.resumo-card {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F5F1E8 100%);
+    border: none;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 2rem;
+}
+
+.resumo-card .card-body {
+    padding: 2rem;
+}
+
+.resumo-titulo {
+    font-size: 1.375rem; /* 22px */
+    font-weight: 700;
+    color: var(--oxente-blue);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(123, 160, 91, 0.2);
+}
+
+/* Items do Resumo */
+.resumo-item {
+    padding: 1rem 0;
+}
+
+.resumo-label {
+    display: block;
+    font-size: 0.9375rem; /* 15px */
+    font-weight: 500;
+    color: #666666;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.resumo-value {
+    font-size: 1.0625rem; /* 17px */
+    color: var(--oxente-blue);
+}
+
+.resumo-value.fw-bold {
+    font-size: 1.5rem; /* 24px */
+}
+
+/* Alerta de Segurança */
+.alert-info {
+    background-color: rgba(44, 95, 124, 0.1);
+    border: 2px solid rgba(44, 95, 124, 0.2);
+    border-radius: 8px;
+    color: var(--oxente-blue);
+}
+
+.alert-info i {
+    color: var(--oxente-blue);
+}
+
+/* ===================================
+   RESPONSIVO - TRANSFERÊNCIAS
+   =================================== */
+
+@media (max-width: 991px) {
+    .transferencia-card .card-body {
+        padding: 2rem;
+    }
+    
+    .resumo-card {
+        position: relative;
+        top: 0;
+    }
+    
+    .section-title {
+        font-size: 1.125rem; /* 18px */
+    }
+}
+
+@media (max-width: 767px) {
+    .transferencia-card .card-body,
+    .resumo-card .card-body {
+        padding: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1rem; /* 16px */
+    }
+    
+    .custom-input {
+        font-size: 0.9375rem; /* 15px */
+        height: 48px;
+    }
+    
+    .btn-confirmar {
+        font-size: 1.125rem; /* 18px */
+        height: 52px;
+    }
+    
+    .resumo-titulo {
+        font-size: 1.25rem; /* 20px */
+    }
+    
+    .resumo-value.fw-bold {
+        font-size: 1.375rem; /* 22px */
+    }
+}

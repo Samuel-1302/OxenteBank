@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Crédito Coletivo - OxenteBank</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    
+    <div class="dashboard-wrapper">
+        
+        <!-- Sidebar Menu Lateral -->
+        <aside class="dashboard-sidebar">
+            
+            <!-- Logo -->
+            <div class="sidebar-logo">
+                <img src="../images/logo-oxentebank.png" alt="OxenteBank Logo">
+            </div>
+            
+            <!-- Menu de Navegação -->
+            <nav class="sidebar-nav">
+                <a href="./dashboard.html" class="sidebar-link">
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="./saldo-extrato.html" class="sidebar-link">
+                    <i class="bi bi-wallet-fill"></i>
+                    <span>Saldo e Extrato</span>
+                </a>
+                <a href="./transferencias.html" class="sidebar-link">
+                    <i class="bi bi-arrow-left-right"></i>
+                    <span>Transferências</span>
+                </a>
+                <a href="./solicitar-credito.html" class="sidebar-link active">
+                    <i class="bi bi-cash-coin"></i>
+                    <span>Solicitar Crédito</span>
+                </a>
+              
+            </nav>
+            
+            <!-- Botão Sair -->
+            <div class="sidebar-footer">
+                <a href="../index.html" class="sidebar-link-logout">
+                    <i class="bi bi-box-arrow-left"></i>
+                    <span>Sair</span>
+                </a>
+            </div>
+            
+        </aside>
+        
+        <!-- Conteúdo Principal -->
+        <main class="dashboard-main">
+            
+            <!-- Título -->
+            <h1 class="titulo-pagina mb-4">Solicitar Crédito Coletivo</h1>
+            
+            <!-- Card do Carrossel -->
+            <div class="card credito-card">
+                <div class="card-body">
+                    
+                    <!-- Título e Subtítulo -->
+                    <div class="text-center mb-4">
+                        <h4 class="credito-titulo mb-2">Processo de Crédito: 6 passos</h4>
+                        <p class="credito-subtitulo mb-4">para sua cooperativa ter acesso ao crédito</p>
+                    </div>
+                    
+                    <!-- Carrossel -->
+                    <div id="creditoCarousel" class="carousel slide" data-bs-ride="false">
+                        
+                        <!-- Setas de Navegação -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#creditoCarousel" data-bs-slide="prev">
+                            <i class="bi bi-chevron-left"></i>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        
+                        <button class="carousel-control-next" type="button" data-bs-target="#creditoCarousel" data-bs-slide="next">
+                            <i class="bi bi-chevron-right"></i>
+                            <span class="visually-hidden">Próximo</span>
+                        </button>
+                        
+                        <!-- Slides do Carrossel -->
+                        <div class="carousel-inner">
+                            
+                            <!-- SLIDE 1: Cadastro Inicial -->
+                            <div class="carousel-item active">
+                                <div class="carousel-content">
+                                    <div class="step-number">1</div>
+                                    <h3 class="step-title">Cadastro Inicial</h3>
+                                    <p class="step-description">
+                                        Faça o cadastro da cooperativa em nosso portal com informações básicas: CNPJ, número de cooperados, área de atuação e contato.
+                                    </p>
+                                    <div class="step-details">
+                                        <div class="detail-item">
+                                            <i class="bi bi-clock-fill me-2"></i>
+                                            <strong>Tempo:</strong> 10 minutos
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="bi bi-file-earmark-text-fill me-2"></i>
+                                            <strong>Documentos:</strong> CNPJ, Estatuto Social, Ata de Eleição
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- SLIDE 2: Simulação de Crédito -->
+                            <div class="carousel-item">
+                                <div class="carousel-content">
+                                    <div class="step-number">2</div>
+                                    <h3 class="step-title">Simulação de Crédito</h3>
+                                    <p class="step-description">
+                                        Utilize nossa ferramenta online para simular o valor, prazo e condições do crédito ideal para sua cooperativa, sem compromisso.
+                                    </p>
+                                    <div class="step-details">
+                                        <div class="detail-item">
+                                            <i class="bi bi-clock-fill me-2"></i>
+                                            <strong>Tempo:</strong> 5 minutos
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="bi bi-shield-check-fill me-2"></i>
+                                            <strong>Sem compromisso:</strong> Simule quantas vezes quiser
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- SLIDE 3: Análise de Crédito -->
+                            <div class="carousel-item">
+                                <div class="carousel-content">
+                                    <div class="step-number">3</div>
+                                    <h3 class="step-title">Análise de Crédito</h3>
+                                    <p class="step-description">
+                                        Nossa equipe especializada analisa o perfil da cooperativa, histórico financeiro e capacidade de pagamento. Processo humanizado e transparente.
+                                    </p>
+                                    <div class="step-details">
+                                        <div class="detail-item">
+                                            <i class="bi bi-clock-fill me-2"></i>
+                                            <strong>Prazo:</strong> Até 48 horas
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="bi bi-person-check-fill me-2"></i>
+                                            <strong>Análise humanizada:</strong> Atendimento personalizado
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- SLIDE 4: Aprovação e Contrato -->
+                            <div class="carousel-item">
+                                <div class="carousel-content">
+                                    <div class="step-number">4</div>
+                                    <h3 class="step-title">Aprovação e Contrato</h3>
+                                    <p class="step-description">
+                                        Crédito aprovado! Assine o contrato digitalmente com certificado digital válido juridicamente. Processo 100% online e seguro.
+                                    </p>
+                                    <div class="step-details">
+                                        <div class="detail-item">
+                                            <i class="bi bi-clock-fill me-2"></i>
+                                            <strong>Prazo:</strong> Até 1 dia
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="bi bi-file-earmark-check-fill me-2"></i>
+                                            <strong>Assinatura digital:</strong> Certificado válido
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- SLIDE 5: Liberação do Crédito -->
+                            <div class="carousel-item">
+                                <div class="carousel-content">
+                                    <div class="step-number">5</div>
+                                    <h3 class="step-title">Liberação do Crédito</h3>
+                                    <p class="step-description">
+                                        Após assinatura do contrato, o valor do crédito é depositado diretamente na conta da cooperativa em até 24 horas úteis.
+                                    </p>
+                                    <div class="step-details">
+                                        <div class="detail-item">
+                                            <i class="bi bi-clock-fill me-2"></i>
+                                            <strong>Prazo:</strong> Até 24 horas
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="bi bi-cash-stack me-2"></i>
+                                            <strong>Depósito direto:</strong> Na conta da cooperativa
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- SLIDE 6: Acompanhamento -->
+                            <div class="carousel-item">
+                                <div class="carousel-content">
+                                    <div class="step-number">6</div>
+                                    <h3 class="step-title">Acompanhamento</h3>
+                                    <p class="step-description">
+                                        Suporte contínuo durante todo o período do crédito. Acompanhamento via WhatsApp, e-mail e telefone, com flexibilidade para renegociação.
+                                    </p>
+                                    <div class="step-details">
+                                        <div class="detail-item">
+                                            <i class="bi bi-headset me-2"></i>
+                                            <strong>Canais:</strong> WhatsApp, E-mail, Telefone
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="bi bi-arrow-repeat me-2"></i>
+                                            <strong>Renegociação:</strong> Flexibilidade quando necessário
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                        <!-- Indicadores (Dots) -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#creditoCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#creditoCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#creditoCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#creditoCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#creditoCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#creditoCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Botão Iniciar Solicitação -->
+                    <div class="text-center mt-5">
+                        <a href="./formulario-credito.html" class="btn-credito-iniciar">
+                            Iniciar Solicitação
+                            <i class="bi bi-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </main>
+        
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS Customizado -->
+    <script src="../js/main.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script src="../js/credito.js"></script>
+    
+</body>
+</html>

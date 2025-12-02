@@ -1,0 +1,442 @@
+.cadastro-container {
+    background-color: var(--oxente-beige);
+    padding: 2.5rem 1rem; /* AUMENTADO padding superior */
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Logo no Topo do Cadastro */
+.cadastro-logo-container {
+    margin-bottom: 2rem;
+}
+
+.cadastro-logo {
+    width: 350px;
+    max-width: 90%;
+    height: auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
+}
+
+.cadastro-card {
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    max-width: 100%;
+}
+
+.cadastro-card .card-body {
+    padding: 2rem 1.5rem;
+}
+.cadastro-card {
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    max-width: 100%; /* Garante que não estoure */
+}
+
+.cadastro-card .card-body {
+    padding: 2rem 1.5rem; /* Reduz padding para caber melhor */
+}
+
+/* Progress Bar Customizado */
+.cadastro-progress {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.progress-steps {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    flex-wrap: nowrap; /* Impede quebra de linha */
+}
+
+.progress-step {
+    display: flex;
+    align-items: center;
+}
+
+.progress-circle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #E0E0E0;
+    color: #999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* Não permite encolher */
+}
+
+.progress-step.active .progress-circle {
+    background-color: var(--oxente-green);
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(123, 160, 91, 0.3);
+}
+
+.progress-line {
+    width: 70px;
+    height: 3px;
+    background-color: #E0E0E0;
+    margin: 0 0.5rem;
+    flex-shrink: 0; /* Não permite encolher */
+}
+
+.progress-label {
+    font-size: 1.0625rem; /* 17px */
+    color: var(--oxente-blue);
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Título */
+.cadastro-titulo {
+    font-family: var(--font-heading);
+    font-size: 2.25rem; /* 36px - ajustado */
+    font-weight: 700;
+    color: var(--oxente-blue);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+/* Seções do Formulário */
+.form-section {
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #F0F0F0;
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600;
+    color: var(--oxente-blue);
+    margin-bottom: 1.25rem;
+}
+
+/* Labels */
+.form-label {
+    font-size: 1rem; /* 16px */
+    font-weight: 500;
+    color: #333333;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Inputs */
+.custom-input {
+    font-size: 1rem; /* 16px */
+    padding: 0.75rem 1rem;
+    height: 50px;
+    border: 2px solid #E0E0E0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.custom-input:focus {
+    border-color: var(--oxente-green);
+    box-shadow: 0 0 0 0.2rem rgba(123, 160, 91, 0.15);
+    outline: none;
+}
+
+.custom-input::placeholder {
+    color: #999999;
+    font-size: 0.9375rem; /* 15px */
+}
+
+/* Botão Próxima Etapa */
+.btn-proxima {
+    background-color: var(--oxente-green);
+    border: none;
+    font-size: 1.125rem; /* 18px */
+    font-weight: 600;
+    padding: 0.875rem 1.5rem;
+    height: 54px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.btn-proxima:hover {
+    background-color: var(--oxente-green-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(123, 160, 91, 0.4);
+}
+
+.btn-proxima i {
+    margin-left: 0.5rem;
+    font-size: 1.25rem;
+}
+
+/* Card de Dicas */
+.dicas-card {
+    background-color: var(--oxente-beige);
+    border-radius: var(--border-radius);
+    padding: 2.5rem 2rem; /* Padding aumentado */
+    height: 100%;
+    min-height: 500px; /* Altura mínima garantida */
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 2rem;
+}
+
+.dicas-titulo {
+    font-size: 1.625rem; /* 26px - MAIOR */
+    font-weight: 700; /* Mais negrito */
+    color: var(--oxente-blue);
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem; /* Mais espaço */
+    padding-bottom: 1rem;
+    border-bottom: 3px solid rgba(123, 160, 91, 0.3); /* Linha separadora */
+}
+
+.dicas-titulo i {
+    color: var(--oxente-orange);
+    font-size: 1.875rem; /* 30px - Ícone maior */
+    margin-right: 0.75rem;
+}
+
+.dicas-conteudo {
+    font-size: 1.125rem; /* 18px - LEGÍVEL */
+    line-height: 1.8; /* Mais espaçado */
+    color: #444444; /* Cor mais escura */
+    flex: 1; /* Ocupa espaço disponível */
+}
+
+.dica-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem; /* Mais espaço entre itens */
+    padding: 1.25rem; /* Padding interno */
+    background-color: rgba(255, 255, 255, 0.6); /* Fundo semi-transparente */
+    border-radius: 8px;
+    border-left: 4px solid var(--oxente-green); /* Barra lateral verde */
+    transition: all 0.3s ease;
+}
+
+.dica-item:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.dica-item:last-child {
+    margin-bottom: 0;
+}
+
+.dica-item i {
+    color: var(--oxente-green);
+    font-size: 1.375rem; /* 22px - Ícone maior */
+    margin-top: 0.25rem;
+    margin-right: 0.875rem;
+    flex-shrink: 0;
+}
+
+.dica-item strong {
+    color: var(--oxente-blue);
+    font-weight: 700;
+}
+
+/* Adicionar um rodapé no card de dicas */
+.dicas-footer {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid rgba(123, 160, 91, 0.2);
+    text-align: center;
+}
+
+.dicas-footer p {
+    font-size: 0.9375rem; /* 15px */
+    color: #666666;
+    margin: 0;
+}
+
+.dicas-footer i {
+    color: var(--oxente-green);
+    font-size: 1.125rem;
+    margin-right: 0.5rem;
+}
+/* ===================================
+   RESPONSIVO - CADASTRO
+   =================================== */
+
+/* Tablets grandes e desktops pequenos (992px - 1199px) */
+@media (max-width: 1199px) {
+    .cadastro-card .card-body {
+        padding: 2rem 1.5rem;
+    }
+    
+    .cadastro-titulo {
+        font-size: 2rem; /* 32px */
+    }
+    
+    .section-title {
+        font-size: 1.125rem; /* 18px */
+    }
+    
+    .dicas-card {
+        padding: 1.25rem;
+    }
+    
+    .dicas-titulo {
+        font-size: 1.125rem; /* 18px */
+    }
+    
+    .dicas-conteudo {
+        font-size: 0.875rem; /* 14px */
+    }
+}
+
+/* Tablets (768px - 991px) */
+@media (max-width: 991px) {
+    .cadastro-container {
+        padding: 1.5rem 0.75rem;
+    }
+    
+    .cadastro-card .card-body {
+        padding: 1.5rem 1.25rem;
+    }
+    
+    .cadastro-titulo {
+        font-size: 1.875rem; /* 30px */
+        text-align: center;
+    }
+    
+    .section-title {
+        font-size: 1.0625rem; /* 17px */
+    }
+    
+    .progress-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .progress-line {
+        width: 50px;
+    }
+    
+    .progress-label {
+        font-size: 1rem;
+    }
+    
+    /* Dicas ficam abaixo do formulário em tablets */
+    .dicas-card {
+        margin-top: 2rem;
+        position: relative;
+        top: 0;
+    }
+}
+
+/* Mobile (576px - 767px) */
+@media (max-width: 767px) {
+    .cadastro-container {
+        padding: 1rem 0.5rem;
+    }
+    
+    .cadastro-card .card-body {
+        padding: 1.5rem 1rem;
+    }
+    
+    .cadastro-titulo {
+        font-size: 1.625rem; /* 26px */
+    }
+    
+    .section-title {
+        font-size: 1rem; /* 16px */
+    }
+    
+    .custom-input {
+        font-size: 0.9375rem; /* 15px */
+        height: 48px;
+        padding: 0.625rem 0.875rem;
+    }
+    
+    .btn-proxima {
+        font-size: 1.0625rem; /* 17px */
+        height: 50px;
+    }
+    
+    .progress-circle {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9375rem;
+    }
+    
+    .progress-line {
+        width: 40px;
+        height: 2px;
+    }
+    
+    .form-label {
+        font-size: 0.9375rem; /* 15px */
+    }
+}
+
+/* Mobile Pequeno (até 575px) */
+@media (max-width: 575px) {
+    .cadastro-container {
+        padding: 0.75rem 0.25rem;
+    }
+    
+    .cadastro-card .card-body {
+        padding: 1.25rem 0.875rem;
+    }
+    
+    .cadastro-titulo {
+        font-size: 1.5rem; /* 24px */
+        margin-bottom: 1.5rem;
+    }
+    
+    .progress-circle {
+        width: 32px;
+        height: 32px;
+        font-size: 0.875rem;
+    }
+    
+    .progress-line {
+        width: 30px;
+    }
+    
+    .progress-label {
+        font-size: 0.9375rem;
+    }
+    
+    .section-title {
+        font-size: 0.9375rem; /* 15px */
+        margin-bottom: 1rem;
+    }
+    
+    .custom-input {
+        font-size: 0.875rem; /* 14px */
+        height: 46px;
+    }
+    
+    .btn-proxima {
+        font-size: 1rem; /* 16px */
+        height: 48px;
+        padding: 0.75rem 1.25rem;
+    }
+    
+    .form-label {
+        font-size: 0.875rem; /* 14px */
+    }
+}

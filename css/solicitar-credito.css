@@ -1,0 +1,303 @@
+.credito-card {
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.credito-card .card-body {
+    padding: 3rem 2.5rem;
+}
+
+.credito-titulo {
+    font-family: var(--font-heading);
+    font-size: 1.75rem; /* 28px */
+    font-weight: 700;
+    color: var(--oxente-blue);
+}
+
+.credito-subtitulo {
+    font-size: 1.125rem; /* 18px */
+    color: #666666;
+}
+
+/* ===================================
+   CARROSSEL CUSTOMIZADO
+   =================================== */
+
+.carousel {
+    position: relative;
+    background: linear-gradient(135deg, var(--oxente-green) 0%, #88b56d 100%);
+    border-radius: var(--border-radius-lg);
+    padding: 3rem 2rem;
+    min-height: 450px;
+}
+
+/* Setas de Navegação */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.carousel-control-prev {
+    left: -30px;
+}
+
+.carousel-control-next {
+    right: -30px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-control-prev i,
+.carousel-control-next i {
+    font-size: 2rem;
+    color: var(--oxente-green);
+}
+
+/* Conteúdo do Slide */
+.carousel-content {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Número do Passo */
+.step-number {
+    width: 70px;
+    height: 70px;
+    background-color: var(--oxente-orange);
+    color: #FFFFFF;
+    font-size: 2rem; /* 32px */
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 4px 12px rgba(210, 105, 30, 0.3);
+}
+
+/* Título do Passo */
+.step-title {
+    font-family: var(--font-heading);
+    font-size: 1.75rem; /* 28px */
+    font-weight: 700;
+    color: var(--oxente-blue);
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+/* Descrição */
+.step-description {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.7;
+    color: #444444;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Detalhes do Passo */
+.step-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.detail-item {
+    font-size: 1rem; /* 16px */
+    color: #555555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-item i {
+    color: var(--oxente-green);
+    font-size: 1.25rem;
+}
+
+.detail-item strong {
+    color: var(--oxente-blue);
+    margin-right: 0.5rem;
+}
+
+/* Indicadores (Dots) */
+.carousel-indicators {
+    bottom: -50px;
+}
+
+.carousel-indicators button {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #CCCCCC;
+    border: none;
+    opacity: 1;
+    margin: 0 6px;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators button.active {
+    background-color: var(--oxente-green);
+    width: 40px;
+    border-radius: 7px;
+}
+
+/* Botão Iniciar Solicitação */
+.btn-credito-iniciar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #FF8C42 0%, #ff6b1a 100%);
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+    padding: 22px 65px;
+    border-radius: 60px;
+    border: none;
+    box-shadow: 0 12px 35px rgba(255, 140, 66, 0.5);
+    transition: all 0.4s ease;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.btn-credito-iniciar:hover {
+    background: linear-gradient(135deg, #ff6b1a 0%, #e55a0f 100%);
+    transform: translateY(-6px);
+    box-shadow: 0 18px 50px rgba(255, 140, 66, 0.7);
+    color: white;
+}
+
+.btn-credito-iniciar i {
+    font-size: 28px;
+}
+/* ===================================
+   RESPONSIVO - SOLICITAR CRÉDITO
+   =================================== */
+
+@media (max-width: 991px) {
+    .credito-card .card-body {
+        padding: 2.5rem 2rem;
+    }
+    
+    .carousel {
+        padding: 2.5rem 1.5rem;
+        min-height: 420px;
+    }
+    
+    .carousel-content {
+        padding: 2rem;
+        min-height: 350px;
+    }
+    
+    .credito-titulo {
+        font-size: 1.5rem; /* 24px */
+    }
+    
+    .step-title {
+        font-size: 1.5rem; /* 24px */
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .carousel-control-prev {
+        left: -15px;
+    }
+    
+    .carousel-control-next {
+        right: -15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .credito-card .card-body {
+        padding: 2rem 1.5rem;
+    }
+    
+    .carousel {
+        padding: 2rem 1rem;
+        min-height: 500px;
+    }
+    
+    .carousel-content {
+        padding: 1.5rem;
+        min-height: 420px;
+    }
+    
+    .credito-titulo {
+        font-size: 1.375rem; /* 22px */
+    }
+    
+    .credito-subtitulo {
+        font-size: 1rem; /* 16px */
+    }
+    
+    .step-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.75rem; /* 28px */
+    }
+    
+    .step-title {
+        font-size: 1.375rem; /* 22px */
+    }
+    
+    .step-description {
+        font-size: 1rem; /* 16px */
+    }
+    
+    .detail-item {
+        font-size: 0.9375rem; /* 15px */
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 45px;
+        height: 45px;
+        top: auto;
+        bottom: -70px;
+    }
+    
+    .carousel-control-prev {
+        left: 50%;
+        margin-left: -70px;
+    }
+    
+    .carousel-control-next {
+        right: 50%;
+        margin-right: -70px;
+    }
+    
+    .carousel-indicators {
+        bottom: -130px;
+    }
+    
+    .btn-iniciar {
+        font-size: 1.125rem; /* 18px */
+        padding: 0.875rem 2rem;
+        height: 52px;
+    }
+}

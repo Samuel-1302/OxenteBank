@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garantias - OxenteBank</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="garantias-page">
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="../images/logo-oxentebank.png" alt="OxenteBank" class="logo">
+            </div>
+            <div class="user-info">
+                <span class="user-name" id="userName">Carregando...</span>
+                <button class="btn-logout" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="dashboard-nav">
+        <ul>
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="saldo-extrato.html"><i class="fas fa-wallet"></i> Saldo e Extrato</a></li>
+            <li><a href="transferencias.html"><i class="fas fa-exchange-alt"></i> Transferências</a></li>
+            <li><a href="solicitar-credito.html"><i class="fas fa-hand-holding-usd"></i> Crédito</a></li>
+            <li><a href="relatorios.html"><i class="fas fa-chart-bar"></i> Relatórios</a></li>
+            <li><a href="garantias.html" class="active"><i class="fas fa-shield-alt"></i> Garantias</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="garantias-container">
+        <!-- Cabeçalho -->
+        <div class="garantias-header">
+            <div class="header-left">
+                <h1 class="garantias-title">Gestão de Garantias</h1>
+                <p class="garantias-subtitle">Gerencie as garantias vinculadas às suas operações de crédito</p>
+            </div>
+            <button class="btn-adicionar" onclick="abrirModalNovaGarantia()">
+                <i class="fas fa-plus-circle"></i> Nova Garantia
+            </button>
+        </div>
+
+        <!-- Cards de Resumo -->
+        <div class="resumo-grid">
+            <div class="resumo-card">
+                <div class="resumo-icon garantias-ativas">
+                    <i class="fas fa-shield-check"></i>
+                </div>
+                <div class="resumo-info">
+                    <p class="resumo-label">Garantias Ativas</p>
+                    <h2 class="resumo-valor" id="totalGarantiasAtivas">0</h2>
+                </div>
+            </div>
+
+            <div class="resumo-card">
+                <div class="resumo-icon valor-total">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <div class="resumo-info">
+                    <p class="resumo-label">Valor Total</p>
+                    <h2 class="resumo-valor" id="valorTotalGarantias">R$ 0,00</h2>
+                </div>
+            </div>
+
+            <div class="resumo-card">
+                <div class="resumo-icon garantias-pendentes">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="resumo-info">
+                    <p class="resumo-label">Pendentes de Análise</p>
+                    <h2 class="resumo-valor" id="totalGarantiasPendentes">0</h2>
+                </div>
+            </div>
+
+            <div class="resumo-card">
+                <div class="resumo-icon garantias-vencendo">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="resumo-info">
+                    <p class="resumo-label">Vencendo em 30 dias</p>
+                    <h2 class="resumo-valor" id="totalGarantiasVencendo">0</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filtros e Busca -->
+        <div class="filtros-section">
+            <div class="busca-wrapper">
+                <i class="fas fa-search busca-icon"></i>
+                <input type="text" id="buscaGarantia" placeholder="Buscar por descrição, tipo ou protocolo..." class="input-busca">
+            </div>
+
+            <div class="filtros-wrapper">
+                <select id="filtroTipo" class="select-filtro">
+                    <option value="todos">Todos os Tipos</option>
+                    <option value="imovel">Imóvel Rural</option>
+                    <option value="maquinario">Maquinário</option>
+                    <option value="estoque">Estoque/Produção</option>
+                    <option value="titulo">Título de Propriedade</option>
+                    <option value="aval">Aval/Fiança</option>
+                </select>
+
+                <select id="filtroStatus" class="select-filtro">
+                    <option value="todos">Todos os Status</option>
+                    <option value="ativa">Ativa</option>
+                    <option value="pendente">Pendente</option>
+                    <option value="vencida">Vencida</option>
+                    <option value="liberada">Liberada</option>
+                </select>
+
+                <button class="btn-filtrar" onclick="aplicarFiltros()">
+                    <i class="fas fa-filter"></i> Filtrar
+                </button>
+            </div>
+        </div>
+
+        <!-- Tabela de Garantias -->
+        <div class="tabela-container">
+            <table class="tabela-garantias">
+                <thead>
+                    <tr>
+                        <th>Protocolo</th>
+                        <th>Tipo</th>
+                        <th>Descrição</th>
+                        <th>Valor Estimado</th>
+                        <th>Data Cadastro</th>
+                        <th>Validade</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaGarantiasBody">
+                    <!-- Conteúdo será preenchido dinamicamente -->
+                </tbody>
+            </table>
+
+            <!-- Mensagem quando não há garantias -->
+            <div id="mensagemVazia" class="mensagem-vazia" style="display: none;">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Nenhuma garantia encontrada</h3>
+                <p>Adicione sua primeira garantia clicando no botão "Nova Garantia"</p>
+            </div>
+        </div>
+
+        <!-- Paginação -->
+        <div class="paginacao" id="paginacao">
+            <button class="btn-paginacao" onclick="mudarPagina('anterior')" id="btnAnterior">
+                <i class="fas fa-chevron-left"></i> Anterior
+            </button>
+            <span class="info-pagina" id="infoPagina">Página 1 de 1</span>
+            <button class="btn-paginacao" onclick="mudarPagina('proxima')" id="btnProxima">
+                Próxima <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </main>
+
+    <!-- Modal Nova Garantia -->
+    <div id="modalNovaGarantia" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2><i class="fas fa-plus-circle"></i> Nova Garantia</h2>
+                <button class="btn-fechar-modal" onclick="fecharModalNovaGarantia()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <form id="formNovaGarantia" onsubmit="salvarNovaGarantia(event)">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="tipoGarantia">Tipo de Garantia *</label>
+                        <select id="tipoGarantia" required>
+                            <option value="">Selecione...</option>
+                            <option value="imovel">Imóvel Rural</option>
+                            <option value="maquinario">Maquinário</option>
+                            <option value="estoque">Estoque/Produção</option>
+                            <option value="titulo">Título de Propriedade</option>
+                            <option value="aval">Aval/Fiança</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricaoGarantia">Descrição *</label>
+                        <input type="text" id="descricaoGarantia" placeholder="Ex: Fazenda São João - 50 hectares" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="valorGarantia">Valor Estimado (R$) *</label>
+                        <input type="text" id="valorGarantia" placeholder="0,00" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="validadeGarantia">Data de Validade *</label>
+                        <input type="date" id="validadeGarantia" required>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="observacoesGarantia">Observações</label>
+                        <textarea id="observacoesGarantia" rows="3" placeholder="Informações adicionais sobre a garantia..."></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="documentosGarantia">Documentos Anexos</label>
+                        <div class="upload-area" id="uploadArea">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Clique ou arraste arquivos aqui</p>
+                            <span class="upload-info">PDF, JPG, PNG até 5MB</span>
+                            <input type="file" id="documentosGarantia" multiple accept=".pdf,.jpg,.jpeg,.png" style="display: none;">
+                        </div>
+                        <div id="listaArquivos" class="lista-arquivos"></div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn-cancelar" onclick="fecharModalNovaGarantia()">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="btn-salvar">
+                        <i class="fas fa-save"></i> Salvar Garantia
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Detalhes da Garantia -->
+    <div id="modalDetalhes" class="modal">
+        <div class="modal-content modal-detalhes">
+            <div class="modal-header">
+                <h2><i class="fas fa-shield-alt"></i> Detalhes da Garantia</h2>
+                <button class="btn-fechar-modal" onclick="fecharModalDetalhes()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="detalhes-content" id="detalhesContent">
+                <!-- Conteúdo será preenchido dinamicamente -->
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn-cancelar" onclick="fecharModalDetalhes()">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <p>&copy; 2025 OxenteBank - Sistema para Cooperativas Agrícolas</p>
+    </footer>
+
+    <script src="../js/garantias.js"></script>
+</body>
+</html>

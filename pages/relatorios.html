@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios Financeiros - OxenteBank</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="relatorios-page">
+    <!-- Header -->
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="../images/logo-oxentebank.png" alt="OxenteBank" class="logo">
+            </div>
+            <div class="user-info">
+                <span class="user-name" id="userName">Carregando...</span>
+                <button class="btn-logout" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="dashboard-nav">
+        <ul>
+            <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+            <li><a href="saldo-extrato.html"><i class="fas fa-wallet"></i> Saldo e Extrato</a></li>
+            <li><a href="transferencias.html"><i class="fas fa-exchange-alt"></i> Transferências</a></li>
+            <li><a href="solicitar-credito.html"><i class="fas fa-hand-holding-usd"></i> Crédito</a></li>
+            <li><a href="relatorios.html" class="active"><i class="fas fa-chart-bar"></i> Relatórios</a></li>
+            <li><a href="#"><i class="fas fa-shield-alt"></i> Garantias</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="relatorios-container">
+        <!-- Cabeçalho com Título e Botão Exportar -->
+        <div class="relatorios-header">
+            <h1 class="relatorios-title">Relatórios Financeiros</h1>
+            <button class="btn-exportar" onclick="exportarRelatorio()">
+                <i class="fas fa-download"></i> Exportar
+            </button>
+        </div>
+
+        <!-- Filtros -->
+        <div class="relatorios-filtros">
+            <div class="filtro-periodo">
+                <i class="fas fa-calendar-alt filtro-icon"></i>
+                <input type="date" id="dataInicio">
+                <span class="separador">—</span>
+                <input type="date" id="dataFim">
+            </div>
+
+            <div class="filtro-tipo">
+                <i class="fas fa-file-alt filtro-icon"></i>
+                <select id="tipoRelatorio">
+                    <option value="geral">Tipo de Relatório</option>
+                    <option value="receitas">Receitas</option>
+                    <option value="despesas">Despesas</option>
+                    <option value="fluxo-caixa">Fluxo de Caixa</option>
+                </select>
+                <i class="fas fa-chevron-down select-arrow"></i>
+            </div>
+        </div>
+
+        <!-- Grid de Métricas e Gráficos -->
+        <div class="relatorios-grid">
+            <!-- Card Receita Mensal -->
+            <div class="metrica-simples">
+                <p class="metrica-label">Receita Mensal</p>
+                <h2 class="metrica-valor" id="receitaMensal">R$ 0,00</h2>
+            </div>
+
+            <!-- Card Crescimento -->
+            <div class="metrica-simples">
+                <p class="metrica-label">Crescimento</p>
+                <h2 class="metrica-valor crescimento-positivo" id="crescimento">0%</h2>
+            </div>
+
+            <!-- Card Despesas Totais -->
+            <div class="metrica-simples">
+                <p class="metrica-label">Despesas Totais</p>
+                <h2 class="metrica-valor" id="despesasTotais">R$ 0,00</h2>
+            </div>
+
+            <!-- Gráfico Receita Mensal (Barras) -->
+            <div class="grafico-box">
+                <div class="grafico-titulo">
+                    <h3>Receita Mensal</h3>
+                    <span class="grafico-escala">R$ 10 K</span>
+                </div>
+                <div class="grafico-canvas-wrapper">
+                    <canvas id="chartReceitaMensal"></canvas>
+                </div>
+            </div>
+
+            <!-- Gráfico Crescimento (Linha) -->
+            <div class="grafico-box">
+                <div class="grafico-titulo">
+                    <h3>Crescimento</h3>
+                    <span class="grafico-escala">10%</span>
+                </div>
+                <div class="grafico-canvas-wrapper">
+                    <canvas id="chartCrescimento"></canvas>
+                </div>
+            </div>
+
+            <!-- Gráfico Categorias de Despesas (Rosca) -->
+            <div class="grafico-box">
+                <div class="grafico-titulo">
+                    <h3>Categorias de Despesas</h3>
+                </div>
+                <div class="grafico-canvas-wrapper grafico-donut">
+                    <canvas id="chartDespesas"></canvas>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <p>&copy; 2025 OxenteBank - Sistema para Cooperativas Agrícolas</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="../js/relatorios.js"></script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.breadcrumb-item a {
+    color: var(--oxente-blue);
+    text-decoration: none;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--oxente-green);
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: #666666;
+}
+
+/* Card do Formulário */
+.formulario-card {
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.formulario-card .card-body {
+    padding: 2.5rem;
+}
+
+/* Input de Valor Grande */
+.input-group-valor .input-group-text {
+    background-color: var(--oxente-green);
+    border: none;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 1.5rem; /* 24px */
+    padding: 1rem 1.5rem;
+}
+
+.input-valor {
+    font-size: 1.75rem !important; /* 28px */
+    font-weight: 700;
+    height: 70px !important;
+    color: var(--oxente-blue);
+}
+
+/* Botões de Prazo */
+.btn-outline-success {
+    border-color: var(--oxente-green);
+    color: var(--oxente-green);
+    font-weight: 600;
+    padding: 0.875rem;
+}
+
+.btn-outline-success:hover,
+.btn-check:checked + .btn-outline-success {
+    background-color: var(--oxente-green);
+    border-color: var(--oxente-green);
+    color: #FFFFFF;
+}
+
+/* Garantias */
+.garantias-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.form-check {
+    padding: 1rem;
+    background-color: var(--oxente-beige);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.form-check:hover {
+    background-color: rgba(123, 160, 91, 0.1);
+}
+
+.form-check-input:checked ~ .form-check-label {
+    font-weight: 600;
+    color: var(--oxente-green);
+}
+
+.form-check-label {
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Botão Enviar */
+.btn-enviar {
+    background-color: var(--oxente-green);
+    border: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 0.875rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: var(--oxente-green-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(123, 160, 91, 0.4);
+}
+
+/* ===================================
+   CARD DE SIMULAÇÃO
+   =================================== */
+
+.simulacao-card {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F5F1E8 100%);
+    border: none;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 2rem;
+}
+
+.simulacao-card .card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--oxente-blue);
+}
+
+.simulacao-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+.simulacao-item:last-of-type {
+    border-bottom: none;
+}
+
+.simulacao-label {
+    display: block;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #666666;
+    margin-bottom: 0.5rem;
+}
+
+.simulacao-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--oxente-blue);
+}
+
+.simulacao-item-destaque {
+    padding: 1.25rem;
+    background-color: rgba(123, 160, 91, 0.1);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.simulacao-item-destaque:last-of-type {
+    margin-bottom: 0;
+}
+
+.simulacao-value-destaque {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--oxente-blue);
+}
+
+/* ===================================
+   CARD DE STATUS
+   =================================== */
+
+.status-card {
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.status-card .card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--oxente-blue);
+}
+
+.status-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.status-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.625rem;
+    top: 1.5rem;
+    bottom: 0;
+    width: 2px;
+    background-color: #E0E0E0;
+}
+
+.status-item {
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.status-item:last-child {
+    padding-bottom: 0;
+}
+
+.status-icon {
+    position: absolute;
+    left: -1.375rem;
+    top: 0.25rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-icon i {
+    font-size: 0.875rem;
+    color: #CCCCCC;
+}
+
+.status-item.pending .status-icon i {
+    color: var(--oxente-orange);
+    font-size: 1rem;
+}
+
+.status-item.active .status-icon i {
+    color: var(--oxente-blue);
+}
+
+.status-item.completed .status-icon i {
+    color: var(--oxente-green);
+}
+
+.status-title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 0.25rem;
+}
+
+.status-item.pending .status-title {
+    color: var(--oxente-orange);
+}
+
+.status-desc {
+    font-size: 0.9375rem;
+    color: #666666;
+}
+
+/* ===================================
+   RESPONSIVO - FORMULÁRIO CRÉDITO
+   =================================== */
+
+@media (max-width: 991px) {
+    .formulario-card .card-body {
+        padding: 2rem;
+    }
+    
+    .simulacao-card,
+    .status-card {
+        position: relative;
+        top: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .formulario-card .card-body {
+        padding: 1.5rem;
+    }
+    
+    .input-valor {
+        font-size: 1.375rem !important;
+        height: 60px !important;
+    }
+    
+    .input-group-valor .input-group-text {
+        font-size: 1.25rem;
+    }
+    
+    .garantias-options {
+        grid-template-columns: 1fr;
+    }
+    
+    .btn-enviar {
+        width: 100%;
+    }
+}

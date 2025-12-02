@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Cooperativa - OxenteBank</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="cadastro-container">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <!-- Card Principal do Cadastro -->
+          <div class="col-12 col-md-11 col-lg-10 col-xl-9">
+            <!-- NOVO: Logo no Topo -->
+            <div class="cadastro-logo-container text-center mb-4">
+              <img
+                src="../images/logo-oxentebank.png"
+                alt="OxenteBank Logo"
+                class="cadastro-logo"
+              />
+            </div>
+
+            <div class="card cadastro-card">
+              <div class="card-body p-4 p-md-5">
+                <div class="row">
+                  <!-- Coluna Formulário -->
+                  <div class="col-lg-7">
+                    <!-- Progress Bar -->
+                    <div class="cadastro-progress mb-4">
+                      <div class="progress-steps">
+                        <div class="progress-step active">
+                          <div class="progress-circle">1</div>
+                        </div>
+                        <div class="progress-line"></div>
+                        <div class="progress-step">
+                          <div class="progress-circle">2</div>
+                        </div>
+                        <div class="progress-line"></div>
+                        <div class="progress-step">
+                          <div class="progress-circle">3</div>
+                        </div>
+                      </div>
+                      <p class="progress-label mt-3">1 de 3</p>
+                    </div>
+
+                    <!-- Título -->
+                    <h1 class="cadastro-titulo mb-4">
+                      Cadastro de Cooperativa
+                    </h1>
+
+                    <!-- Formulário Etapa 1 -->
+                    <form id="cadastroForm">
+                      <!-- Seção: Dados da Cooperativa -->
+                      <div class="form-section mb-4">
+                        <h3 class="section-title mb-3">Dados da Cooperativa</h3>
+
+                        <!-- Nome da Cooperativa -->
+                        <div class="mb-3">
+                          <label for="nomeCooperativa" class="form-label"
+                            >Nome da Cooperativa</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control custom-input"
+                            id="nomeCooperativa"
+                            placeholder="Digite o nome completo"
+                            required
+                          />
+                        </div>
+
+                        <!-- CNPJ -->
+                        <div class="mb-3">
+                          <label for="cnpj" class="form-label">CNPJ</label>
+                          <input
+                            type="text"
+                            class="form-control custom-input"
+                            id="cnpj"
+                            placeholder="00.000.000/0000-00"
+                            maxlength="18"
+                            required
+                          />
+                        </div>
+
+                        <!-- Endereço -->
+                        <div class="mb-3">
+                          <label for="endereco" class="form-label"
+                            >Endereço</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control custom-input"
+                            id="endereco"
+                            placeholder="Rua, Número, Bairro, Cidade - UF"
+                            required
+                          />
+                        </div>
+                      </div>
+
+                      <!-- Seção: Representante Legal -->
+                      <div class="form-section mb-4">
+                        <h3 class="section-title mb-3">Representante Legal</h3>
+
+                        <div class="row">
+                          <!-- Nome -->
+                          <div class="col-md-6 mb-3">
+                            <label for="nomeRepresentante" class="form-label"
+                              >Nome</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control custom-input"
+                              id="nomeRepresentante"
+                              placeholder="Nome completo"
+                              required
+                            />
+                          </div>
+
+                          <!-- E-mail -->
+                          <div class="col-md-6 mb-3">
+                            <label for="emailRepresentante" class="form-label"
+                              >E-mail</label
+                            >
+                            <input
+                              type="email"
+                              class="form-control custom-input"
+                              id="emailRepresentante"
+                              placeholder="email@exemplo.com"
+                              required
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Botão Próxima Etapa -->
+                      <button
+                        type="submit"
+                        class="btn btn-primary btn-proxima w-100"
+                      >
+                        Próxima Etapa
+                        <i class="bi bi-arrow-right ms-2"></i>
+                      </button>
+                    </form>
+                  </div>
+
+                  <!-- Coluna Dicas Úteis -->
+                  <div class="col-lg-5 d-none d-lg-block">
+                    <div class="dicas-card">
+                      <h4 class="dicas-titulo">
+                        <i class="bi bi-lightbulb-fill"></i>
+                        Dicas úteis
+                      </h4>
+                      <div class="dicas-conteudo">
+                        <div class="dica-item">
+                          <i class="bi bi-check-circle-fill"></i>
+                          <span
+                            >Tenha em mãos o <strong>CNPJ</strong> da
+                            cooperativa</span
+                          >
+                        </div>
+                        <div class="dica-item">
+                          <i class="bi bi-check-circle-fill"></i>
+                          <span
+                            >Prepare os <strong>documentos</strong> do
+                            representante legal</span
+                          >
+                        </div>
+                        <div class="dica-item">
+                          <i class="bi bi-check-circle-fill"></i>
+                          <span
+                            >O cadastro leva cerca de
+                            <strong>10 minutos</strong></span
+                          >
+                        </div>
+                        <div class="dica-item">
+                          <i class="bi bi-check-circle-fill"></i>
+                          <span
+                            >Todas as informações são
+                            <strong>seguras e criptografadas</strong></span
+                          >
+                        </div>
+                      </div>
+
+                      <!-- NOVO: Rodapé com informação adicional -->
+                      <div class="dicas-footer">
+                        <p>
+                          <i class="bi bi-shield-fill-check"></i>
+                          <strong>Seus dados estão protegidos</strong>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS Customizado -->
+    <script src="../js/main.js"></script>
+    <script src="../js/cadastro.js"></script>
+  </body>
+</html>

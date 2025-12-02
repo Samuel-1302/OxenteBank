@@ -1,0 +1,383 @@
+/* ===================================
+   TELA: DASHBOARD
+   =================================== */
+
+/* Wrapper Principal */
+.dashboard-wrapper {
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--oxente-beige);
+}
+
+/* ===================================
+   SIDEBAR - MENU LATERAL
+   =================================== */
+
+.dashboard-sidebar {
+    width: 250px;
+    background-color: var(--oxente-green);
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* Logo */
+.sidebar-logo {
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-logo img {
+    width: 180px;
+    max-width: 100%;
+    filter: brightness(0) invert(1); /* Logo branco */
+}
+
+/* Menu de Navegação */
+.sidebar-nav {
+    flex: 1;
+    padding: 1.5rem 0;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 1.0625rem; /* 17px */
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    border-left-color: #FFFFFF;
+}
+
+.sidebar-link.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
+    border-left-color: #FFFFFF;
+    font-weight: 600;
+}
+
+.sidebar-link i {
+    font-size: 1.375rem; /* 22px */
+    margin-right: 0.875rem;
+    width: 24px;
+    text-align: center;
+}
+
+/* Rodapé do Sidebar (Sair) */
+.sidebar-footer {
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-link-logout {
+    display: flex;
+    align-items: center;
+    padding: 0.875rem 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.sidebar-link-logout:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #FFFFFF;
+}
+
+.sidebar-link-logout i {
+    font-size: 1.375rem;
+    margin-right: 0.875rem;
+}
+
+/* ===================================
+   CONTEÚDO PRINCIPAL
+   =================================== */
+
+.dashboard-main {
+    flex: 1;
+    margin-left: 250px; /* Largura do sidebar */
+    padding: 2rem;
+    background-color: var(--oxente-beige);
+}
+
+/* Header */
+.dashboard-header {
+    margin-bottom: 2rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header-greeting {
+    font-family: var(--font-heading);
+    font-size: 2.25rem; /* 36px */
+    font-weight: 700;
+    color: var(--oxente-beige);
+    margin: 0;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Notificações */
+.notification-icon {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notification-icon:hover {
+    background-color: var(--oxente-green);
+    color: #FFFFFF;
+    transform: scale(1.05);
+}
+
+.notification-icon i {
+    font-size: 1.375rem; /* 22px */
+    color: var(--oxente-green);
+}
+
+.notification-icon:hover i {
+    color: #FFFFFF;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background-color: var(--oxente-red-badge);
+    color: #FFFFFF;
+    font-size: 0.75rem; /* 12px */
+    font-weight: 700;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--oxente-beige);
+}
+
+/* Perfil do Usuário */
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 1rem;
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-name {
+    font-size: 1.0625rem; /* 17px */
+    font-weight: 600;
+    color: var(--oxente-blue);
+}
+
+/* ===================================
+   CARDS DE RESUMO
+   =================================== */
+
+.dashboard-cards {
+    margin-bottom: 2rem;
+}
+
+.summary-card {
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.summary-card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+}
+
+.summary-card .card-body {
+    padding: 1.75rem;
+}
+
+.card-subtitle {
+    font-size: 1rem; /* 16px */
+    font-weight: 500;
+    color: #666666;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-value {
+    font-family: var(--font-heading);
+    font-size: 2rem; /* 32px */
+    font-weight: 700;
+    color: var(--oxente-blue);
+    margin: 0;
+}
+
+.card-value.text-success {
+    color: var(--oxente-green) !important;
+}
+
+.card-value.text-danger {
+    color: #E74C3C !important;
+}
+
+/* ===================================
+   GRÁFICO
+   =================================== */
+
+.chart-card {
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.chart-card .card-body {
+    padding: 2rem;
+}
+
+.chart-title {
+    font-size: 1.375rem; /* 22px */
+    font-weight: 600;
+    color: var(--oxente-blue);
+    margin-bottom: 1.5rem;
+}
+
+.chart-container {
+    position: relative;
+    height: 300px;
+}
+
+/* ===================================
+   RESPONSIVO - DASHBOARD
+   =================================== */
+
+/* Tablets e Mobile */
+@media (max-width: 991px) {
+    .dashboard-sidebar {
+        width: 200px;
+    }
+    
+    .dashboard-main {
+        margin-left: 200px;
+        padding: 1.5rem;
+    }
+    
+    .sidebar-logo img {
+        width: 140px;
+    }
+    
+    .sidebar-link {
+        font-size: 0.9375rem; /* 15px */
+        padding: 0.875rem 1rem;
+    }
+    
+    .header-greeting {
+        font-size: 1.875rem; /* 30px */
+    }
+    
+    .card-value {
+        font-size: 1.75rem; /* 28px */
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .dashboard-sidebar {
+        width: 70px;
+    }
+    
+    .dashboard-main {
+        margin-left: 70px;
+        padding: 1rem;
+    }
+    
+    .sidebar-logo {
+        padding: 1rem 0.5rem;
+    }
+    
+    .sidebar-logo img {
+        width: 50px;
+    }
+    
+    .sidebar-link span,
+    .sidebar-link-logout span {
+        display: none; /* Oculta texto, mostra só ícones */
+    }
+    
+    .sidebar-link,
+    .sidebar-link-logout {
+        justify-content: center;
+        padding: 1rem 0.5rem;
+    }
+    
+    .sidebar-link i,
+    .sidebar-link-logout i {
+        margin-right: 0;
+    }
+    
+    .header-greeting {
+        font-size: 1.5rem; /* 24px */
+    }
+    
+    .user-name {
+        display: none; /* Oculta nome no mobile */
+    }
+    
+    .card-value {
+        font-size: 1.5rem; /* 24px */
+    }
+    
+    .chart-container {
+        height: 250px;
+    }
+}
